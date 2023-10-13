@@ -5,7 +5,7 @@ namespace relay
 
 Code anhand der Python- und  Arduino Library neu programmiert von Lutz Elßner im Oktober 2023
 */ {
-    export enum eADDR { Relay_x18 = 0x18, Relay_x19 = 0x19 }
+    export enum eADDR { Relay_x19 = 0x19, intern_x18 = 0x18 } // 0x18 ist intern reserviert
     /*
 # Some devices have multiple available addresses - this is a list of these addresses.
 # NOTE: The first address in this list is considered the default I2C address for the
@@ -99,8 +99,8 @@ QUAD_SOLID_STATE_RELAY_JUMPER_CLOSE_ADDR = 0x09
     //% pOnOff.shadow="toggleOnOff"
     export function turnRelay(pADDR: number, pOnOff: boolean) {
         if (pOnOff) {
-            i2cWriteBuffer(pADDR, Buffer.fromArray([eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON])) // 1
-            //writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON) // 1
+            //i2cWriteBuffer(pADDR, Buffer.fromArray([eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON])) // 1
+            writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON) // 1
         } else {
             i2cWriteBuffer(pADDR, Buffer.fromArray([eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_OFF])) // 0
             //writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_OFF) // 0
@@ -138,41 +138,41 @@ QUAD_SOLID_STATE_RELAY_JUMPER_CLOSE_ADDR = 0x09
     //% pADDR.shadow="relay_eADDR"
     //% newAddress.min=7 newAddress.max=120 newAddress.defl=0x18
     export function changeAddress(pADDR: number, newAddress: number) {
-        if (newAddress >= 0x07 && newAddress <= 0x78){
+        if (newAddress >= 0x07 && newAddress <= 0x78) {
             //let bu = Buffer.create(2)
             //bu.setUint8(0, eSF_SINGLE_RELAY_COMMANDS.SINGLE_CHANGE_ADDRESS) // 3
             //bu.setUint8(1, newAddress)
             i2cWriteBuffer(pADDR, Buffer.fromArray([eSF_SINGLE_RELAY_COMMANDS.SINGLE_CHANGE_ADDRESS, newAddress]))
         }
-            //writeRegister(pADDR, eSF_SINGLE_RELAY_COMMANDS.SINGLE_CHANGE_ADDRESS, newAddress)
+        //writeRegister(pADDR, eSF_SINGLE_RELAY_COMMANDS.SINGLE_CHANGE_ADDRESS, newAddress)
     }
 
 
-/* 
-    function set_relay_on(pADDR: number) {
-        writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON) // 1
-    }
-
-    function set_relay_off(pADDR: number) {
-        writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_OFF) // 0
-    }
-
-    function get_relay_state(pADDR: number) {
-        return readRegister(pADDR, eSF_SINGLE_RELAY_COMMANDS.MYSTATUS) // 5
-    }
- */
+    /* 
+        function set_relay_on(pADDR: number) {
+            writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_ON) // 1
+        }
+    
+        function set_relay_off(pADDR: number) {
+            writeCommand(pADDR, eSF_SINGLE_RELAY_COMMANDS.TURN_RELAY_OFF) // 0
+        }
+    
+        function get_relay_state(pADDR: number) {
+            return readRegister(pADDR, eSF_SINGLE_RELAY_COMMANDS.MYSTATUS) // 5
+        }
+     */
     // ========== group="Single Relay Register"
 
     // group="Single Relay Register" advanced=true
     // block="i2c %pADDR readRegister %pRegister" weight=2
     // pADDR.shadow="relay_eADDR"
-/*     function readRegister(pADDR: number, pRegister: eSF_SINGLE_RELAY_COMMANDS) {
-        let bu = Buffer.create(1)
-        bu.setUint8(0, pRegister)
-        i2cWriteBuffer(pADDR, bu, true)
-        bu = i2cReadBuffer(pADDR, 1)
-        return bu.getUint8(0)
-    } */
+    /*     function readRegister(pADDR: number, pRegister: eSF_SINGLE_RELAY_COMMANDS) {
+            let bu = Buffer.create(1)
+            bu.setUint8(0, pRegister)
+            i2cWriteBuffer(pADDR, bu, true)
+            bu = i2cReadBuffer(pADDR, 1)
+            return bu.getUint8(0)
+        } */
 
     // group="Single Relay Register" advanced=true
     // block="i2c %pADDR writeRegister %pRegister %byte" weight=1
@@ -180,19 +180,19 @@ QUAD_SOLID_STATE_RELAY_JUMPER_CLOSE_ADDR = 0x09
     // pRegister.defl=qwiicgpio.eCommandByte.OUTPUT_PORT
     // byte.min=0 byte.max=255 byte.defl=1
     // inlineInputMode=inline
-/*     function writeRegister(pADDR: number, pRegister: eSF_SINGLE_RELAY_COMMANDS, byte: number) {
-        let bu = Buffer.create(2)
-        bu.setUint8(0, pRegister)
-        bu.setUint8(1, byte)
-        i2cWriteBuffer(pADDR, bu)
-    } */
-/* 
+    /*     function writeRegister(pADDR: number, pRegister: eSF_SINGLE_RELAY_COMMANDS, byte: number) {
+            let bu = Buffer.create(2)
+            bu.setUint8(0, pRegister)
+            bu.setUint8(1, byte)
+            i2cWriteBuffer(pADDR, bu)
+        } */
+
     function writeCommand(pADDR: number, pCommand: eSF_SINGLE_RELAY_COMMANDS) {
         let bu = Buffer.create(1)
         bu.setUint8(0, pCommand)
         i2cWriteBuffer(pADDR, bu)
     }
- */
+
 
 
 
