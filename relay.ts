@@ -1,5 +1,5 @@
 
-//% color=#7F0000 icon="\uf011" block="Relay" weight=05
+//% color=#FF1F00 icon="\uf011" block="Relay" weight=05
 namespace relay
 /* 231013 https://github.com/calliope-net/relay
 
