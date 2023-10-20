@@ -46,7 +46,9 @@ Das ist mit einer externen 3,3V Stromversorgung zu lösen. (Achtung! Qwiic vertr
 Aber auch damit bleibt der Umstand, dass sich der gesamte i2c-Bus beim Einschalten aufhängt, wenn das Relay Modul angesteckt ist.
 Der Strom kann auch nicht der Grund sein, solange das Relais Aus ist. Und mit dem Trick 'Anstecken nach dem Einschalten' hat das Relais auch am normalen Bus hörbar geklickt.
 
-**Das 'SparkFun Qwiic Single Relay' kann am Calliope nicht verwendet werden.** Wer die Ursache dafür findet, möge das bitte mitteilen.
+**Das 'SparkFun Qwiic Single Relay' blockiert den i2c-Bus und kann am Calliope nicht verwendet werden.**
+
+Wer die Ursache dafür findet, möge das bitte mitteilen.
 
 ### Erweiterungen
 
