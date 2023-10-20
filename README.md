@@ -48,7 +48,7 @@ Der Strom kann auch nicht der Grund sein, solange das Relais Aus ist. Und mit de
 
 **Das 'SparkFun Qwiic Single Relay' blockiert den i2c-Bus und kann am Calliope nicht verwendet werden.**
 
-Wer die Ursache dafür findet, möge das bitte mitteilen.
+Wer die Ursache dafür findet, möge das bitte mitteilen. (Getestet wurde mit 2 Modulen von verschiedenen Händlern mit dem gleichen Ergebnis.)
 
 ### Erweiterungen
 
