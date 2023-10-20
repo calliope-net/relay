@@ -1,31 +1,47 @@
 
-> Diese Seite bei [https://calliope-net.github.io/relay/](https://calliope-net.github.io/relay/) öffnen
+Diese Seite bei [https://calliope-net.github.io/relay/](https://calliope-net.github.io/relay/) öffnen.
 
-## Als Erweiterung verwenden
+### Calliope Erweiterung für das i2c Modul:
+
+* [SparkFun Qwiic Single Relay](https://www.sparkfun.com/products/15093)
+
+![](https://cdn.sparkfun.com//assets/parts/1/3/4/5/1/15093-SparkFun_Qwiic_Single_Relay-01.jpg)
 
 Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Neues Projekt**
-* klicke auf **Erweiterungen** unter dem Zahnrad-Menü
-* nach **https://github.com/calliope-net/relay** suchen und importieren
+* öffne [makecode.calliope.cc](https://makecode.calliope.cc)
+* klicke auf eine Projektvorlage
+* klicke unter dem Zahnrad-Menü auf **Erweiterungen** (oder bei den Blöcken ganz unten)
+* kopiere die folgende **Projekt-URL** in die Zwischenablage (Strg-C)
+* **calliope-net/relay**
+* füge sie auf der Webseite oben ein (Strg-V) und klicke auf die Lupe (oder ENTER)
+* wenn die Erweiterung gefunden wurde, klicke auf das Rechteck
+* jetzt hat die Liste den neuen Eintrag **Relay** bekommen
 
-## Dieses Projekt bearbeiten ![Build status badge](https://github.com/calliope-net/relay/workflows/MakeCode/badge.svg)
+![](blocks.png)
 
-Um dieses Repository in MakeCode zu bearbeiten.
+### Beschreibung der Erweiterung für 'SparkFun Qwiic Single Relay'
 
-* öffne [https://makecode.calliope.cc/](https://makecode.calliope.cc/)
-* klicke auf **Importieren** und dann auf **Importiere URL**
-* füge **https://github.com/calliope-net/relay** ein und klicke auf Importieren
+*
 
-## Blocks preview
 
-This image shows the blocks code from the last commit in master.
-This image may take a few minutes to refresh.
+### Erweiterungen
 
-![A rendered view of the blocks](https://github.com/calliope-net/relay/raw/master/.github/makecode/blocks.png)
+> [Upates für Erweiterungen; Erweiterungen aus einem Projekt löschen.](https://calliope-net.github.io/i2c-liste#updates)
+
+> [Alle i2c-Erweiterungen für MakeCode von calliope-net (Software).](https://calliope-net.github.io/i2c-liste#erweiterungen)
+
+#### Calliope-Apps, .hex-Dateien, Bildschirmfotos mit Blöcken
+
+> [Alle Beispiel-Projekte für MakeCode von calliope-net (Calliope-Apps).](https://calliope-net.github.io/i2c-liste#programmierbeispiele)
+
+> GitHub-Profil calliope-net: [https://github.com/calliope-net](https://github.com/calliope-net)
+
+### Bezugsquellen
+
+> [Alle i2c-Module und Bezugsquellen (Hardware).](https://calliope-net.github.io/i2c-liste#bezugsquellen)
 
 #### Metadaten (verwendet für Suche, Rendering)
 
-* for PXT/calliopemini
-<script src="https://makecode.com/gh-pages-embed.js"></script><script>makeCodeRender("{{ site.makecode.home_url }}", "{{ site.github.owner_name }}/{{ site.github.repository_name }}");</script>
+* Calliope mini
+* i2c
