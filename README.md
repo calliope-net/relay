@@ -23,7 +23,7 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 ### Beschreibung der Erweiterung für 'SparkFun Qwiic Single Relay'
 
 Es könnte die einfachste i2c-Erweiterung sein, die es gibt: Eine (binäre) 0 an die i2c-Adresse gesendet schaltet das Relais aus, eine 1 schaltet es ein.
-"Unter Umständen" funktioniert das tatsächlich so. (Relais-deutsch, Relay-englisch.)
+"Unter Umständen" funktioniert das tatsächlich so. (Relay-englisch, Relais-deutsch Herkunft französisch.)
 
 Der erste Umstand ist, dass die i2c-Adresse 0x18 vom Calliope schon intern belegt ist. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. 
 Diese können von Modulen nicht verwendet werden.
@@ -35,10 +35,16 @@ Anmerkung: Wenn die Lötbrücke vorhanden ist, wird die geänderte i2c-Adresse b
 
 Der zweite Umstand ist, dass sich der gesamte i2c-Bus beim Einschalten aufhängt, wenn das Relay Modul angesteckt ist, egal mit welcher i2c-Adresse. Es wird dann überhaupt kein i2c-Modul erkannt, auch kein 
 internes. Das kann verhindert werden, wenn das Relay Modul erst nach dem Einschalten an den i2c-Bus gesteckt wird. Dann sind die anderen 'Devices' am i2c-Bus bereit und die Adresse 0x19 oder 0x1E ebenfalls.
+Es ist aber nicht praktikabel, Hardware anzustecken nachdem der Strom eingeschaltet wurde.
 
+Die erfolgreichen Tests, i2c-Adresse ändern, Ein und Aus schalten mit der neuen i2c-Adresse, funktionierten nur mit Anstecken nach dem Einschalten.
 
+Der dritte Umstand ist, dass ein Relais bei 3 Volt einen bemerkenswerten Strom braucht, wenn es An ist. Das verträgt der i2c-Bus möglicherweise nicht. Ebenso das Schalten der induktiven Last.
+Das ist mit einer externen 3,3V Stromversorgung zu lösen. (Achtung! Qwiic verträgt keine 5 Volt!) 
+Aber auch damit bleibt der Umstand, dass sich der gesamte i2c-Bus beim Einschalten aufhängt, wenn das Relay Modul angesteckt ist.
+Der Strom kann auch nicht der Grund sein, solange das Relais Aus ist. Und mit dem Trick 'Anstecken nach dem Einschalten' hat das Relais auch am normalen Bus hörbar geklickt.
 
-
+**Das 'SparkFun Qwiic Single Relay' kann am Calliope nicht verwendet werden.** Wer die Ursache dafür findet, möge das bitte mitteilen.
 
 ### Erweiterungen
 
