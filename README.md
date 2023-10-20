@@ -22,7 +22,20 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 
 ### Beschreibung der Erweiterung für 'SparkFun Qwiic Single Relay'
 
-*
+Es könnte die einfachste i2c-Erweiterung sein, die es gibt: Eine (binäre) 0 an die i2c-Adresse gesendet schaltet das Relais aus, eine 1 schaltet es ein.
+"Unter Umständen" funktioniert das tatsächlich so.
+
+Der erste Umstand ist, dass die i2c-Adresse 0x18 vom Calliope schon intern belegt ist. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. 
+Diese können von Modulen nicht verwendet werden.
+
+Bei diesem Modul kann die i2c-Adresse geändert werden: entweder durch eine Lötbrücke in 0x19, dann ist der Adresskonflikt gelöst.
+Oder mit einem i2c-Command-Code an 0x18. Das funktioniert, obwohl die 0x18 intern belegt ist. Ich habe in 0x1E geändert. Erlaubt ist jede 7-Bit i2c-Adresse.
+Und die Änderung bleibt erhalten. Wenn das Modul wieder an geschaltet wird, hat es immer noch die 0x1E in diesem Beispiel.
+Anmerkung: Wenn die Lötbrücke vorhanden ist, wird die geänderte i2c-Adresse beim Ausschalten vergessen. Beim Einschalten gilt immer die 0x19. Das wäre aber kein Problem.
+
+
+
+
 
 
 ### Erweiterungen
