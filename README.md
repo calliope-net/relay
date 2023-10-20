@@ -29,11 +29,11 @@ Der erste Umstand ist, dass die i2c-Adresse 0x18 vom Calliope schon intern beleg
 Diese können von Modulen nicht verwendet werden.
 
 Bei diesem Modul kann die i2c-Adresse geändert werden: entweder durch eine Lötbrücke in 0x19, dann ist der Adresskonflikt gelöst.
-Oder mit einem i2c-Command-Code an 0x18. Das funktioniert, obwohl die 0x18 intern belegt ist. Ich habe in 0x1E geändert. Erlaubt ist jede 7-Bit i2c-Adresse.
+Oder mit einem i2c-Command-Code an 0x18. Das funktioniert, obwohl die 0x18 intern belegt ist. Hier wurde in 0x1E geändert. Erlaubt ist jede 7-Bit i2c-Adresse.
 Und die Änderung bleibt erhalten. Wenn das Modul wieder an geschaltet wird, hat es immer noch die 0x1E in diesem Beispiel.
-Anmerkung: Wenn die Lötbrücke vorhanden ist, wird die geänderte i2c-Adresse beim Ausschalten vergessen. Beim Einschalten gilt immer die 0x19. Das wäre aber kein Problem.
+Anmerkung: Wenn die Lötbrücke vorhanden ist, wird die geänderte i2c-Adresse beim Ausschalten vergessen. Beim Einschalten gilt immer die 0x19. Damit müsste es nun funktionieren.
 
-
+Der zweite Umstand
 
 
 
