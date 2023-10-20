@@ -1,6 +1,8 @@
 
 Diese Seite bei [https://calliope-net.github.io/relay/](https://calliope-net.github.io/relay/) öffnen.
 
+**Das 'SparkFun Qwiic Single Relay' blockiert den i2c-Bus und kann am Calliope nicht verwendet werden.**
+
 ### Calliope Erweiterung für das i2c Modul:
 
 * [SparkFun Qwiic Single Relay](https://www.sparkfun.com/products/15093)
