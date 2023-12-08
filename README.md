@@ -1,13 +1,18 @@
 
 Diese Seite bei [https://calliope-net.github.io/relay/](https://calliope-net.github.io/relay/) öffnen.
 
-**Das 'SparkFun Qwiic Single Relay' blockiert den i2c-Bus und kann am Calliope nicht verwendet werden.**
+**Das 'SparkFun Qwiic Single Relay' funktioniert nur mit dem Calliope mini V3.**
+
+**Am Calliope mini 1 und 2 blockiert das 'Relay' den i2c-Bus und kann nicht verwendet werden.**
 
 ### Calliope Erweiterung für das i2c Modul:
 
 * [SparkFun Qwiic Single Relay](https://www.sparkfun.com/products/15093)
 
 ![](https://cdn.sparkfun.com//assets/parts/1/3/4/5/1/15093-SparkFun_Qwiic_Single_Relay-01.jpg)
+
+![](https://shop.calliope.cc/cdn/shop/files/Calliope_mini_front_2000x2000_87cab7e1-5e4e-497e-a5ac-f97fdf3fc3a5_370x.png?v=1701961330)
+
 
 Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 
@@ -25,11 +30,14 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 ### Beschreibung der Erweiterung für 'SparkFun Qwiic Single Relay'
 
 Es könnte die einfachste i2c-Erweiterung sein, die es gibt: Eine (binäre) 0 an die i2c-Adresse gesendet schaltet das Relais aus, eine 1 schaltet es ein.
-"Unter Umständen" funktioniert das tatsächlich so. (Relay-englisch, Relais-deutsch Herkunft französisch.)
+Beim Calliope mini V3 funktioniert das tatsächlich so. (Relay-englisch, Relais-deutsch Herkunft französisch.)
 
-Der erste Umstand ist, dass die i2c-Adresse 0x18 vom Calliope schon intern belegt ist. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. 
+Beim Calliope 1 und 2 ist die i2c-Adresse 0x18 schon intern belegt ist. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. 
 Diese können von Modulen nicht verwendet werden.
 
+Calliope 3 hat einen getrennten i2c-Bus intern und extern. Somit sind extern alle i2c Adressen verfügbar. 
+Das 'SparkFun Qwiic Single Relay' funktioniert mit der originalen und auch mit geänderten i2c-Adressen.
+<!--
 Bei diesem Modul kann die i2c-Adresse geändert werden: entweder durch eine Lötbrücke in 0x19, dann ist der Adresskonflikt gelöst.
 Oder mit einem i2c-Command-Code an 0x18. Das funktioniert, obwohl die 0x18 intern belegt ist. Hier wurde in 0x1E geändert. Erlaubt ist jede 7-Bit i2c-Adresse.
 Und die Änderung bleibt erhalten. Wenn das Modul wieder an geschaltet wird, hat es immer noch die 0x1E in diesem Beispiel.
@@ -49,7 +57,7 @@ Der Strom kann auch nicht der Grund sein, solange das Relais Aus ist. Und mit de
 **Das 'SparkFun Qwiic Single Relay' blockiert den i2c-Bus und kann am Calliope nicht verwendet werden.**
 
 Wer die Ursache dafür findet, möge das bitte mitteilen. (Getestet wurde mit 2 Modulen von verschiedenen Händlern mit dem gleichen Ergebnis. Dass beide kaputt sind, ist nicht sehr wahrscheinlich.)
-
+-->
 ### Erweiterungen
 
 > [Upates für Erweiterungen; Erweiterungen aus einem Projekt löschen.](https://calliope-net.github.io/i2c-liste#updates)
