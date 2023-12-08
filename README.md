@@ -31,7 +31,7 @@ Dieses Repository kann als **Erweiterung** in MakeCode hinzugefügt werden.
 Es könnte die einfachste i2c-Erweiterung sein, die es gibt: Eine (binäre) 0 an die i2c-Adresse gesendet schaltet das Relais aus, eine 1 schaltet es ein.
 Beim Calliope mini V3 funktioniert das tatsächlich so. (Relay-englisch, Relais-deutsch Herkunft französisch.)
 
-Beim Calliope 1 und 2 ist die i2c-Adresse 0x18 schon intern belegt ist. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. Diese können von Modulen nicht verwendet werden. 
+Beim Calliope 1 und 2 ist die i2c-Adresse 0x18 schon intern belegt. Intern belegt sind 3 Adressen 0x10, 0x18 und 0x68. Diese können von Modulen nicht verwendet werden. 
 Auch wenn die i2c-Adresse geändert wurde (mit Lötbrücke oder Software), blockiert das Modul trotzdem beim Einschalten den gesamten i2c-Bus und kann am Calliope 1 und 2 nicht verwendet werden. 
 
 Calliope 3 hat einen getrennten i2c-Bus intern und extern. Somit sind extern alle i2c Adressen verfügbar. 
